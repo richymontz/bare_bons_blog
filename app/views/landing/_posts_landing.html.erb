@@ -1,0 +1,9 @@
+<article class="blog-post">
+    <h2 class="blog-post-title mb-1">  <%= post.title %>  </h2>
+    <p class="blog-post-meta"> <%= I18n.l(DateTime.now, format: :long)%> </p>
+    <p><%= post.body.truncate(50)%></p>
+    <p class="lead mb-0">
+        <%= link_to 'Continue reading...', post_path(post), class: 'text-blue fw-bold' %>    
+    </p>
+    <hr>
+</article>

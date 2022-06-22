@@ -1,0 +1,11 @@
+
+    <li class="list-group-item d-flex justify-content-between lh-sm">
+        <div>
+            <h6 class="my-0"><%= post.title %></h6>
+            <small class="text-muted"><%= post.body.truncate(30) %></small>
+        </div>
+        <span class="text-muted">
+            <%= link_to 'Edit', edit_post_path(post)%>
+            <%= link_to "Remove", post, data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?' } %>
+        </span>
+    </li>

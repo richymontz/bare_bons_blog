@@ -1,0 +1,16 @@
+<%= link_to 'Back to main page', root_path%>
+
+<article class="blog-post" style="text-align: justify;">
+    <h2 class="blog-post-title mb-1">  <%= @post.title %>  </h2>
+
+    <p class="blog-post-meta"> <%= I18n.l(DateTime.now, format: :long)%> </p>
+
+    <%= simple_format @post.body%>
+</article>
+
+<hr>
+<h3>Comments</h3>
+
+<%= render partial: 'comments/comment', collection: @post.comments, as: :comment %>
+<hr>
+<%= render 'comments/form' %>

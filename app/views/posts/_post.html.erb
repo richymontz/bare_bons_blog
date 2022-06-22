@@ -1,0 +1,34 @@
+<%= form_for @post do |f| %>
+  <% if @post.errors.any? %>
+    <div class="card text-dark bg-warning mb-6" style="">
+      <div class="card-header">
+        Warning
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h5>
+        <p class="card-text">
+          <% @post.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <br>
+  <% end %>
+
+  <div class="container">
+     <div class="mb-3">
+      <%= f.label :title, class: 'form-label' %><br>
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
+ 
+    <div class="mb-3">
+      <%= f.label :body, class: 'form-label' %><br>
+      <%= f.text_area :body, class: 'form-control' %>
+    </div>
+  
+    <p>
+      <%= f.submit submit_button, class: 'btn btn-primary' %>
+    </p>
+  </div>
+<% end %>

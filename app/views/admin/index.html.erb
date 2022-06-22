@@ -1,0 +1,18 @@
+<header class="d-flex align-items-center pb-3 mb-5 border-bottom">
+    <a href="#" class="d-flex align-items-center text-dark text-decoration-none">
+      <b><span class="fs-4">BARE-BONE Blog Admim page</span></b>
+    </a>
+</header>
+
+<div class="row g-5">
+    <div class="col-md-8">
+        <h2>Manage Posts</h2>
+        <p><%= link_to 'Create a new Post', new_post_path %></p>
+
+        <ul class="list-group mb-6">
+            <%= render partial: 'posts_list', collection: @posts, as: :post %>
+        </ul>
+
+        
+    </div>
+</div>
