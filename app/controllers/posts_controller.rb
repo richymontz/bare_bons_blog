@@ -1,8 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
-  def index;end
-
   def show;end
 
   def new
@@ -11,7 +9,6 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-
     if @post.save
       redirect_to admin_index_path, notice: "Post was successfully created."
     else
